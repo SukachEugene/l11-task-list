@@ -13,4 +13,12 @@
 <p>{{ $task->created_at }}</p>
 <p>{{ $task->updated_at }}</p>
 
+<div>
+    <form action="{{ route('tasks.destroy', ['task' => $task->id]) }}" method="POST">
+        @csrf
+        @method('delete')
+        <button type="submit">Delete Task</button>
+    </form>
+</div>
+
 @endsection
